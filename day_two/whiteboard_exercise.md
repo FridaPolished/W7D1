@@ -2,34 +2,6 @@
 `a ||= b`
 
 
-class WhatIsSelf
-  def test
-    puts "At the instance level, self is #{self}"
-  end
-
-  def self.test
-    puts "At the class level, self is #{self}"
-  end
-end
-
-WhatIsSelf.test
- #=> At the class level, self is WhatIsSelf
-
-WhatIsSelf.new.test
- #=> At the instance level, self is #<WhatIsSelf:0x28190>
-```
-
-object = whatIsSelf.new
-
-object.test
-WhatIsSelf.test
-
-RSpec.describe Calculator do
-  it "add method adds numbers" do
-    calc = Calculator.new
-    expect(calc.add(3, 4)).to eq(7)
-  end
-end
 
 super(name, bet)
 
@@ -71,57 +43,6 @@ class artist
 
 album [song]
 
-
-class Jukebox
-  attr_accessor :user
-  attr_reader :current_track
-
-  def initialize(player, user)
-    @player = player
-    @user = user
-    @current_track = nil
-  end
-end
-
-class Player
-  attr_accessor :album, :playlist
-
-  def initialize(album, playlist)
-    @album = album
-    @playlist = playlist
-  end
-
-  def play_track(track)
-    # Begin playing...
-  end
-end
-
-class Playlist
-  def initialize
-    @queue = []
-  end
-
-  def add_track(track)
-    @queue.push(track)
-  end
-
-  def shift
-    @queue.shift
-  end
-end
-
-class Album
-  # Information about the album
-end
-
-class Track
-  # Information about the track, including album
-end
-
-class User
-  # Information about the user.
-end
-```
 
 
 
